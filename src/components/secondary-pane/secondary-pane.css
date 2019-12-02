@@ -1,0 +1,13 @@
+.secondary-pane{
+    width: 300px;
+    background: var(--primary-dark);
+}
+
+.prop-row{
+    font-size: 0.9em;
+    padding: var(--padding-medium);
+    border-bottom: 1px solid var(--divider);
+}
+.props-key{
+    font-weight: 600;
+}

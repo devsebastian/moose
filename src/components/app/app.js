@@ -4,6 +4,32 @@ import './app.css'
 import MainPane from '../main-pane/main-pane';
 import SecondaryPane from '../secondary-pane/secondary-pane';
 
+function resize(e) {
+  e.preventDefault();
+  window.addEventListener('mousemove', e.target.id == "resizer-right" ? changeWidthRight : changeWidthLeft)
+  window.addEventListener('mouseup',  e.target.id == "resizer-right" ? stopResizeRight : stopResizeLeft)
+}
+
+function changeWidthRight(e) {
+  var target = document.getElementsByClassName("side-pane")[0];
+  var width = e.pageX - target.getBoundingClientRect().left + 'px';
+  target.style.width = width;
+}
+
+function changeWidthLeft(e) {
+  var target = document.getElementsByClassName("secondary-pane")[0];
+  var width = target.getBoundingClientRect().right - e.pageX + 'px';
+  target.style.width = width;
+}
+
+function stopResizeRight(e) {
+  window.removeEventListener('mousemove', changeWidthRight)
+}
+
+function stopResizeLeft(e) {
+  window.removeEventListener('mousemove', changeWidthLeft)
+}
+
 class App extends React.Component {
 
   colors = {
@@ -30,6 +56,7 @@ class App extends React.Component {
     }
 
     this.setMethod = this.setMethod.bind(this)
+    this.setProperty = this.setProperty.bind(this)
   }
 
   setMethod(m) {
@@ -37,13 +64,16 @@ class App extends React.Component {
   }
 
 
+  setProperty(props){
+    this.setState({properties: props})
+  }
 
   render() {
     return (
       <div className="pane-container">
-        <SidePane colors={this.colors} requests={this.state.requests} />
-        <MainPane data={this.state} />
-        <SecondaryPane />
+        <SidePane resizeHandler={resize} colors={this.colors} requests={this.state.requests} />
+        <MainPane propertyHandler={this.setProperty}data={this.state} />
+        <SecondaryPane properties={this.state.properties} resizeHandler={resize}  />
       </div>
     );
   }
