@@ -1,0 +1,42 @@
+.main-pane {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#method-btn::after {
+    content: "▼";
+    font-size: 0.6em;
+    margin-left: 4px;
+}
+
+#dialog-method-btn::after {
+    content: "▼";
+    font-size: 0.6em;
+    margin-left: 4px;
+}
+
+.url-bar {
+    border: 0;
+    background: transparent;
+    color: var(--text-primary);
+    flex: 1;
+    padding: 0;
+    background-color: #ffffff07;
+    margin: var(--padding-medium) 0px;
+    padding: var(--padding-medium);
+    border-radius: 4px;
+}
+
+
+.flat-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 0;
+    border-radius: var(--context-menu-border-radius);
+    margin: var(--padding-medium);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}

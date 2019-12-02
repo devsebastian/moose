@@ -1,0 +1,38 @@
+.CodeMirror {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    color: var(--extra-color);
+}
+
+.CodeMirror-scroll {
+    background: var(--primary-color);
+    line-height: 1.6em;
+    padding: var(--default-padding);
+}
+
+.cm-string {
+    color: var(--value-color) !important;
+}
+
+.cm-number, .cm-atom {
+    color: var(--number-color) !important;
+}
+
+.cm-property {
+    color: var(--tag-color) !important;
+}
+
+::selection {
+    background: #454950 !important;
+}
+
+.CodeMirror-gutters {
+    background-color: var(--primary-color) ;
+    border-right: 0;
+}
+
+.CodeMirror-linenumber {
+    padding: 0px 12px;
+    color: var(--text-tertiary);
+}

@@ -1,0 +1,17 @@
+.side-pane-tab {
+    color: var(--text-secondary);
+    padding: var(--padding-small);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.side-pane-tab--selected, .side-pane-tab:hover{
+    border-right: 1px solid var(--accent);
+    background: var(--primary);
+}
+
+.side-pane-tab-method {
+    width: 50px;
+    font-size: 0.8em;
+    display: inline-block;
+}
