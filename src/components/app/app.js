@@ -33,8 +33,13 @@ function stopResizeLeft(e) {
 class App extends React.Component {
 
   colors = {
-    "GET": "#00ff00",
-    "POST": "#ff0000",
+    "GET": "#8DCD59",
+    "POST": "#5856A4",
+    "PUT": "#ED5D92",
+    "PATCH": "#FEBF2D",
+    "DELETE": "#59B5E4",
+    "OPTIONS": "#B36DDD",
+    "HEAD": "#5856A4",
   }
 
   constructor() {
@@ -50,7 +55,7 @@ class App extends React.Component {
         "url": "google.com",
       },{
         "title": "Moose API",
-        "method": "GET",
+        "method": "PATCH",
         "url": "google.com",
       }]
     }

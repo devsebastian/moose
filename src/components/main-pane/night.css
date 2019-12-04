@@ -10,6 +10,7 @@
 
 .cm-s-default.CodeMirror { 
     height: 100%;
+    font-size: 1.1em;;
     background: var(--primary); color: #d6d5d4; }
 .cm-s-default div.CodeMirror-selected { background: #3a3432; }
 .cm-s-default .CodeMirror-line::selection, .cm-s-default .CodeMirror-line > span::selection, .cm-s-default .CodeMirror-line > span > span::selection { background: rgba(58, 52, 50, .99); }

@@ -16,7 +16,6 @@ function SecondaryPane(props) {
             <div id="resizer-left" className="resizer resizer-left" onMouseDown={props.resizeHandler}></div>
 
             <div className="pane-header">
-                Head
             </div>
             <div className="pane-body">
                 {headers}

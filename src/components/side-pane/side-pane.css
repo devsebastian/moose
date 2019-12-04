@@ -1,18 +1,24 @@
 .side-pane {
     -webkit-user-select: none;
-    width: 200px;
+    width: 250px;
     background: var(--primary-dark) !important;
 }
 
 .side-pane .pane-header{
     padding: var(--padding-medium);
 }
+
 .search-bar {
     flex: 1;
+    padding: var(--padding-medium);
+    background: var(--primary);
+    border-radius: 4px;
+    border: 0;
 }
 
 .search-container{
     display: flex;
+    padding:  var(--padding-small);
 }
 
 .search-container button{

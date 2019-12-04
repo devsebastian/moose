@@ -4,8 +4,8 @@
 }
 
 .prop-row{
-    font-size: 0.9em;
     padding: var(--padding-medium);
+    color: var(--text-secondary);
     border-bottom: 1px solid var(--divider);
 }
 .props-key{

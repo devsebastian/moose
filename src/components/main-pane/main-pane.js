@@ -20,16 +20,7 @@ class MainPane extends React.Component {
     }
 
     componentDidMount() {
-        this.cm = new CodeMirror.fromTextArea(document.getElementById("view-area"), {
-            lineNumbers: true,
-            mode: {
-                name: "javascript",
-                json: true
-            },
-            readOnly: true,
-            lineWrapping: false,
-            theme: "default"
-        })
+        this.cm = new CodeMirror.fromTextArea(document.getElementById("view-area"))
     }
 
     setUrl(event) {
