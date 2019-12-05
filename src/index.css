@@ -32,7 +32,7 @@ code {
   --scrollbar-track: #2f343e;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar, ::-moz-scrollbar{
   height: 8px;
   background: var(--scrollbar-track);
   width: 8px;
