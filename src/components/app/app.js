@@ -3,11 +3,12 @@ import SidePane from '../side-pane/side-pane'
 import './app.css'
 import MainPane from '../main-pane/main-pane';
 import SecondaryPane from '../secondary-pane/secondary-pane';
+import StatusBar from '../status-bar/status-bar';
 
 function resize(e) {
   e.preventDefault();
-  window.addEventListener('mousemove', e.target.id == "resizer-right" ? changeWidthRight : changeWidthLeft)
-  window.addEventListener('mouseup',  e.target.id == "resizer-right" ? stopResizeRight : stopResizeLeft)
+  window.addEventListener('mousemove', e.target.id === "resizer-right" ? changeWidthRight : changeWidthLeft)
+  window.addEventListener('mouseup', e.target.id === "resizer-right" ? stopResizeRight : stopResizeLeft)
 }
 
 function changeWidthRight(e) {
@@ -49,11 +50,11 @@ class App extends React.Component {
         "title": "News API",
         "method": "POST",
         "url": "google.com",
-      },{
+      }, {
         "title": "Mongoose",
         "method": "GET",
         "url": "google.com",
-      },{
+      }, {
         "title": "Moose API",
         "method": "PATCH",
         "url": "google.com",
@@ -69,16 +70,19 @@ class App extends React.Component {
   }
 
 
-  setProperty(props){
-    this.setState({properties: props})
+  setProperty(props) {
+    this.setState({ properties: props })
   }
 
   render() {
     return (
-      <div className="pane-container">
-        <SidePane resizeHandler={resize} colors={this.colors} requests={this.state.requests} />
-        <MainPane propertyHandler={this.setProperty}data={this.state} />
-        <SecondaryPane properties={this.state.properties} resizeHandler={resize}  />
+      <div className="main">
+        <div className="pane-container">
+          <SidePane resizeHandler={resize} colors={this.colors} requests={this.state.requests} />
+          <MainPane propertyHandler={this.setProperty} data={this.state} />
+          <SecondaryPane properties={this.state.properties} resizeHandler={resize} />
+        </div>
+        <StatusBar />
       </div>
     );
   }

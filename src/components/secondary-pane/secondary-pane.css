@@ -1,13 +1,16 @@
 .secondary-pane{
     width: 300px;
     background: var(--primary-dark);
+    -webkit-user-select: none;
 }
 
 .prop-row{
     padding: var(--padding-medium);
     color: var(--text-secondary);
+    font-size: 0.9em;
     border-bottom: 1px solid var(--divider);
 }
+
 .props-key{
-    font-weight: 600;
+    color: var(--text-primary);
 }

@@ -2,9 +2,35 @@ import React from 'react';
 import './side-pane.css'
 import SidePaneTab from './side-pane-tab/side-pane-tab'
 
+
 class SidePane extends React.Component {
+
+    constructor() {
+        super()
+        this.state = {
+            requests: []
+        }
+
+        this.addRequest = this.addRequest.bind(this);
+    }
+    componentDidMount() {
+        this.setState({
+            requests: this.props.requests
+        })
+    }
+
+
+    addRequest() {
+        this.setState((oldState) => ({
+            requests: [...oldState.requests, {
+                title: "Dev API",
+                method: "POST"
+            }]
+        })
+        )
+    }
+
     render() {
-        let tabs = this.props.requests.map((request, pos) => <SidePaneTab key={pos} color={this.props.colors[request.method]} title={request.title} method={request.method} />)
         return (
             <div className="pane side-pane">
                 <div id="resizer-right" className="resizer resizer-right" onMouseDown={this.props.resizeHandler}></div>
@@ -20,10 +46,10 @@ class SidePane extends React.Component {
                 <div className="pane-body">
                     <div className="search-container">
                         <input className="search-bar" />
-                        <button>+</button>
                     </div>
-                    {tabs}
+                    {this.state.requests.map((request, pos) => <SidePaneTab key={pos} color={this.props.colors[request.method]} title={request.title} method={request.method} />)}
                 </div>
+                <div className="floating-action-btn" onClick={this.addRequest}>+</div>
             </div>
         )
     }

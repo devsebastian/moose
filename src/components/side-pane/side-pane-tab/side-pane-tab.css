@@ -1,18 +1,31 @@
 .side-pane-tab {
     color: var(--text-secondary);
     padding: var(--padding-medium);
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
+    font-weight: ;
+    display: flex;
+    font-size: 0.9em;
+    border-right: 3px solid transparent;
 }
 
-.side-pane-tab--selected, .side-pane-tab:hover{
-    border-right: 2px solid var(--accent);
+.side-pane-tab-title {
+    flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.side-pane-tab--selected, .side-pane-tab:hover {
+    border-right: 3px solid var(--accent);
     background: var(--primary);
+    color: white;
 }
 
 .side-pane-tab-method {
     width: 50px;
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 600;
+    direction: rtl;
     display: inline-block;
 }

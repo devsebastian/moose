@@ -1,10 +1,9 @@
-:root {
+/* :root {
   --primary-light: #323741;
   --primary: #282c34;
   --primary-dark: #21252b;
   --accent: #61afef;
-  /* --divider-color: #3a3e46; */
-  --divider: #3d434e;
+  --divider: #3a3e46;
   --tag: #e06c75;
   --value: #98c379;
   --number: #c678dd;
@@ -16,9 +15,37 @@
 
   --padding-medium: 12px;
   --padding-small: 6px;
+} */
+
+:root {
+  --primary-light: #455175;
+  --primary: #1b233f;
+  --primary-dark: #171d35;
+  --accent: #715ee6;
+  --divider: #1c223a;
+  /* --divider: #3d434e; */
+  --tag: #e06c75;
+  --value: #98c379;
+  --number: #c678dd;
+  --extra: #bbbbbb;
+  --text-primary: #fff;
+  --text-secondary: #555e78;
+  --text-tertiary: #455175;
+  --prop-key-color: #61afef;
+
+  --padding-medium: 12px;
+  --padding-small: 6px;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .pane-container {
+  flex: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -27,7 +54,6 @@
 .pane {
   position: relative;
   height: 100%;
-  border-right: 1px solid var(--divider);
   display: flex;
   background: var(--primary);
   color: var(--text-primary);

@@ -3,7 +3,7 @@ import './main-pane.css'
 import CodeMirror from 'codemirror'
 import './codemirror.css'
 import 'codemirror/mode/javascript/javascript'
-import './night.css'
+import './default.css'
 import axios from 'axios'
 
 class MainPane extends React.Component {
@@ -20,17 +20,24 @@ class MainPane extends React.Component {
     }
 
     componentDidMount() {
-        this.cm = new CodeMirror.fromTextArea(document.getElementById("view-area"))
+        this.cm = new CodeMirror.fromTextArea(document.getElementById("view-area"), {
+            lineNumbers: true,
+            mode: {
+                "name": "javascript",
+                "json": true
+            },
+            "theme": "default",
+        })
     }
 
     setUrl(event) {
-        console.log(event.target.value);
         this.setState({ url: event.target.value })
     }
 
     setValue(response) {
         this.cm.setValue(JSON.stringify(response.data, null, "\t"));
         this.props.propertyHandler(response.headers)
+        console.log(response)
     }
 
     load() {
@@ -38,6 +45,7 @@ class MainPane extends React.Component {
         axios({
             method: "GET",
             url: this.state.url,
+            withCredentials: true
         }).then(this.setValue);
     }
 

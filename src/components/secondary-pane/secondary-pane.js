@@ -1,9 +1,6 @@
 import React from 'react';
 import './secondary-pane.css'
 function SecondaryPane(props) {
-
-    console.log(props.properties);
-
     var headers = []
     for (var key in props.properties) {
         headers.push(<div className="prop-row">
