@@ -36,10 +36,10 @@ class SidePane extends React.Component {
                 <div id="resizer-right" className="resizer resizer-right" onMouseDown={this.props.resizeHandler}></div>
 
                 <div className="pane-header">
-                    <span style={{ fontWeight: 600 }}>
+                    <span style={{ fontWeight: 800, fontSize: 18 }}>
                         Moose
                 </span>
-                    <span style={{ fontWeight: 400 }}>
+                    <span style={{ fontWeight: 200, fontSize: 18 }}>
                         &nbsp;| API
                 </span>
                 </div>

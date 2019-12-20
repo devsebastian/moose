@@ -10,8 +10,10 @@
 
 .cm-s-default.CodeMirror { 
     height: 100%;
-    font-size: 1.1em;;
-    line-height: 1.5em;
+    font-size: 0.8em;;
+    line-height: 1.6em;
+    font-weight: 600;
+     font-family: 'Open Sans', sans-serif;
     background: var(--primary); 
     color: #d6d5d4; }
 .cm-s-default div.CodeMirror-selected { background: #3a3432; }

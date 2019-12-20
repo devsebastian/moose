@@ -45,7 +45,6 @@ class MainPane extends React.Component {
         axios({
             method: "GET",
             url: this.state.url,
-            withCredentials: true
         }).then(this.setValue);
     }
 

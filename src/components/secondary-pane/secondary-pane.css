@@ -1,16 +1,18 @@
-.secondary-pane{
+.secondary-pane {
     width: 300px;
     background: var(--primary-dark);
     -webkit-user-select: none;
 }
 
-.prop-row{
-    padding: var(--padding-medium);
+.prop-row {
+    padding: 6px var(--padding-medium);
     color: var(--text-secondary);
-    font-size: 0.9em;
+    font-size: 0.8em;
+    font-weight: 600;
     border-bottom: 1px solid var(--divider);
 }
 
-.props-key{
-    color: var(--text-primary);
+.props-key {
+    font-size: 1.1em;
+    font-weight: 800;
 }
