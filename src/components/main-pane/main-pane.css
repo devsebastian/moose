@@ -38,5 +38,6 @@
     margin: var(--padding-medium);
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.8em;
     transition: background 0.2s ease;
 }

@@ -46,7 +46,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      "requests": [{
+      selectedTabIndex: 0,
+      requests: [{
         "title": "News API",
         "method": "POST",
         "url": "google.com",
@@ -59,10 +60,14 @@ class App extends React.Component {
         "method": "PATCH",
         "url": "google.com",
       }]
+
     }
 
     this.setMethod = this.setMethod.bind(this)
     this.setProperty = this.setProperty.bind(this)
+
+    this.setTab = this.setTab.bind(this);
+
   }
 
   setMethod(m) {
@@ -74,11 +79,18 @@ class App extends React.Component {
     this.setState({ properties: props })
   }
 
+  setTab() {
+    this.setState({
+      selectedPos: 1
+    })
+    alert("dev")
+  }
+
   render() {
     return (
       <div className="main">
         <div className="pane-container">
-          <SidePane resizeHandler={resize} colors={this.colors} requests={this.state.requests} />
+          <SidePane resizeHandler={resize} colors={this.colors} setTab={this.setTab} selectedPos={this.state.selectedTabIndex} requests={this.state.requests} />
           <MainPane propertyHandler={this.setProperty} data={this.state} />
           <SecondaryPane properties={this.state.properties} resizeHandler={resize} />
         </div>

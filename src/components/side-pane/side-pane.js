@@ -47,7 +47,7 @@ class SidePane extends React.Component {
                     <div className="search-container">
                         <input className="search-bar" />
                     </div>
-                    {this.state.requests.map((request, pos) => <SidePaneTab key={pos} color={this.props.colors[request.method]} title={request.title} method={request.method} />)}
+                    {this.state.requests.map((request, pos) => <SidePaneTab onClick={this.props.setTab} selected={this.props.selectedPos == pos ? "true" : "false"} key={pos} color={this.props.colors[request.method]} title={request.title} method={request.method} />)}
                 </div>
                 <div className="floating-action-btn" onClick={this.addRequest}>+</div>
             </div>

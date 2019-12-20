@@ -52,7 +52,7 @@ class MainPane extends React.Component {
         return (
             < div className="pane main-pane" >
                 <div className="pane-header">
-                    <button className="flat-btn multi-options">GET</button>
+                    <button className="flat-btn multi-options" id="method-btn">GET</button>
                     <input className="url-bar" placeholder="http://your-product/posts/1" value={this.state.url} onChange={this.setUrl} />
                     <button className="flat-btn" onClick={this.load}>SEND</button>
                 </div>
