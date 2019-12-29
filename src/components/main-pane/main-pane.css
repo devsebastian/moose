@@ -29,7 +29,6 @@
     border-radius: 4px;
 }
 
-
 .flat-btn {
     background: transparent;
     color: var(--text-primary);
@@ -40,4 +39,8 @@
     font-weight: 600;
     font-size: 0.8em;
     transition: background 0.2s ease;
+}
+
+.main-pane-header {
+    -webkit-app-region: no-drag;
 }

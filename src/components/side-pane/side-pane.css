@@ -11,7 +11,7 @@
 .search-bar {
     flex: 1;
     padding: var(--padding-medium);
-    background: var(--primary);
+    background: var(--side-tab-highlight);
     border-radius: 4px;
     border: 0;
 }
@@ -28,10 +28,6 @@
     padding: 0px var(--padding-medium);
     color: white;
     height: 100%;
-}
-
-.search-container button:hover {
-    background: var(--primary);
 }
 
 .floating-action-btn {

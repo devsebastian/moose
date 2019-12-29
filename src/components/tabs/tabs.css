@@ -1,0 +1,9 @@
+.tabs{
+    display: flex;
+    overflow: auto;
+}
+
+.tab-spacer{
+    flex: 1;
+    border-bottom: 1px solid var(--divider);
+}

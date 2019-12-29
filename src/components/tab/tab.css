@@ -1,0 +1,15 @@
+.tab{
+    display: inline-block;
+    padding: var(--padding-medium);
+    border-bottom: 1px solid var(--divider);
+    font-size: 0.8em;
+    -webkit-user-select: none;
+}
+
+
+.tab--selected{
+    border-right: 1px solid var(--divider);
+    border-top: 1px solid var(--divider);
+    border-left: 1px solid var(--divider);
+    border-bottom: 1px solid transparent;
+}

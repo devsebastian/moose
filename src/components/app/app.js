@@ -34,11 +34,11 @@ function stopResizeLeft(e) {
 class App extends React.Component {
 
   colors = {
-    "GET": "#8DCD59",
-    "POST": "#5856A4",
-    "PUT": "#ED5D92",
+    "GET": "#ac84d1 ",
+    "POST": "#77a7a2    ",
+    "PUT": "#d37769    ",
     "PATCH": "#FEBF2D",
-    "DELETE": "#59B5E4",
+    "DELETE": "#c65568",
     "OPTIONS": "#B36DDD",
     "HEAD": "#5856A4",
   }
@@ -47,6 +47,7 @@ class App extends React.Component {
     super();
     this.state = {
       selectedTabIndex: 0,
+      response: "",
       requests: [{
         "title": "News API",
         "method": "POST",
@@ -64,35 +65,28 @@ class App extends React.Component {
     }
 
     this.setMethod = this.setMethod.bind(this)
-    this.setProperty = this.setProperty.bind(this)
-
-    this.setTab = this.setTab.bind(this);
-
+    this.setResponse = this.setResponse.bind(this)
   }
 
   setMethod(m) {
     this.setState({ method: m });
   }
 
-
-  setProperty(props) {
-    this.setState({ properties: props })
-  }
-
-  setTab() {
-    this.setState({
-      selectedPos: 1
-    })
-    alert("dev")
+  setResponse(res) {
+    this.setState({ response: res })
   }
 
   render() {
     return (
       <div className="main">
         <div className="pane-container">
-          <SidePane resizeHandler={resize} colors={this.colors} setTab={this.setTab} selectedPos={this.state.selectedTabIndex} requests={this.state.requests} />
-          <MainPane propertyHandler={this.setProperty} data={this.state} />
-          <SecondaryPane properties={this.state.properties} resizeHandler={resize} />
+          <SidePane resizeHandler={resize} colors={this.colors} selectedPos={this.state.selectedTabIndex} requests={this.state.requests} />
+          <MainPane
+            setResponse={this.setResponse}
+            data={this.state} />
+          <SecondaryPane
+            response={this.state.response}
+            resizeHandler={resize} />
         </div>
         <StatusBar />
       </div>

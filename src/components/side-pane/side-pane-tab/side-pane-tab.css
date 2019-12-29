@@ -1,9 +1,8 @@
 .side-pane-tab {
     color: var(--text-secondary);
-    padding: var(--padding-medium);
+    padding: 10px var(--padding-medium) ;
     transition: all 0.2s ease;
     cursor: pointer;
-    font-weight: ;
     display: flex;
     font-size: 0.9em;
     border-right: 3px solid transparent;
@@ -18,7 +17,7 @@
 
 .side-pane-tab--selected, .side-pane-tab:hover {
     border-right: 3px solid var(--accent);
-    background: var(--primary);
+    background: var(--side-tab-highlight);
     color: white;
 }
 

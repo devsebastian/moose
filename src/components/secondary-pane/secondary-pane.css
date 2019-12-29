@@ -1,10 +1,12 @@
 .secondary-pane {
-    width: 300px;
-    background: var(--primary-dark);
+    width: 45%;
+    border-left: 1px solid var(--divider);
+    background: var(--primary);
     -webkit-user-select: none;
 }
 
 .prop-row {
+    display: inlne-block;
     padding: 6px var(--padding-medium);
     color: var(--text-secondary);
     font-size: 0.8em;
@@ -13,6 +15,14 @@
 }
 
 .props-key {
+    display: inline-block;
     font-size: 1.1em;
-    font-weight: 800;
+    width: 50%;
+    color: var(--text-tertiary);
+}
+
+.props-value {
+    display: inline-block;
+    width: 50%;
+    color: var(--text-primary);
 }
