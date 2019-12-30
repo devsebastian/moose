@@ -70,7 +70,7 @@ class App extends React.Component {
     this.setMethod = this.setMethod.bind(this)
     this.setResponse = this.setResponse.bind(this)
     this.addNewRequest = this.addNewRequest.bind(this)
-    
+
     this.showNewRequestDialog = this.showNewRequestDialog.bind(this)
     this.closeNewRequestDialog = this.closeNewRequestDialog.bind(this)
   }
@@ -93,12 +93,12 @@ class App extends React.Component {
       }]
     }))
   }
-  
-  showNewRequestDialog(){
-    this.setState({showNewRequestDialog: true})
+
+  showNewRequestDialog() {
+    this.setState({ showNewRequestDialog: true })
   }
-  
-  closeNewRequestDialog(){
+
+  closeNewRequestDialog() {
     this.setState({
       showNewRequestDialog: false
     })
@@ -110,8 +110,14 @@ class App extends React.Component {
       <div className="main">
         <div className="pane-container">
 
-          <SidePane showNewRequestDialog={this.showNewRequestDialog} resizeHandler={resize} colors={this.colors} selectedPos={this.state.selectedTabIndex} requests={this.state.requests} />
+          <SidePane
+            showNewRequestDialog={this.showNewRequestDialog}
+            resizeHandler={resize}
+            colors={this.colors}
+            selectedPos={this.state.selectedTabIndex}
+            requests={this.state.requests} />
           <MainPane
+            colors={this.colors}
             setResponse={this.setResponse}
             data={this.state} />
           <SecondaryPane
@@ -119,8 +125,7 @@ class App extends React.Component {
             resizeHandler={resize} />
         </div>
         <StatusBar />
-        {this.state.showNewRequestDialog ? <CreateNewRequestDialog addNewRequest={this.addNewRequest} closeDialog={this.closeNewRequestDialog} /> : <div></div>}
-
+        {this.state.showNewRequestDialog ? <CreateNewRequestDialog colors={this.colors} addNewRequest={this.addNewRequest} closeDialog={this.closeNewRequestDialog} /> : <div></div>}
       </div>
     );
   }

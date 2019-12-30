@@ -46,14 +46,15 @@ class CreateNewRequestDialog extends React.Component {
                         <SelectButton
                             setActiveMethod={this.setActiveMethod}
                             right={12}
+                            colors={this.props.colors}
                             values={[
-                                { id: "GET", title: "GET", color: "#000" },
-                                { id: "POST", title: "POST", color: "#000" },
-                                { id: "PUT", title: "PUT", color: "#000" },
-                                { id: "PATCH", title: "PATCH", color: "#000" },
-                                { id: "DELETE", title: "DELETE", color: "#000" },
-                                { id: "OPTIONS", title: "OPTIONS", color: "#000" },
-                                { id: "HEAD", title: "HEAD", color: "#000" },
+                                { id: "GET", title: "GET", color: this.props.colors["GET"] },
+                                { id: "POST", title: "POST", color: this.props.colors["POST"] },
+                                { id: "PUT", title: "PUT", color: this.props.colors["PUT"] },
+                                { id: "PATCH", title: "PATCH", color: this.props.colors["PATCH"] },
+                                { id: "DELETE", title: "DELETE", color: this.props.colors["DELETE"] },
+                                { id: "OPTIONS", title: "OPTIONS", color: this.props.colors["OPTIONS"] },
+                                { id: "HEAD", title: "HEAD", color: this.props.colors["HEAD"] },
                             ]}
                         />
                     </div>

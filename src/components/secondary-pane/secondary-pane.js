@@ -2,8 +2,14 @@ import React from 'react';
 import './secondary-pane.css'
 import Tabs from '../tabs/tabs';
 import Editor from '../editor/editor'
+import minimise from '../../assets/minimise.svg'
+import maximise from '../../assets/maximise.svg'
+import close from '../../assets/close.svg'
+import restore from '../../assets/restore.svg'
 
 const { dialog } = window.require('electron').remote
+
+const { remote } = window.require('electron')
 
 class SecondaryPane extends React.Component {
 
@@ -25,12 +31,30 @@ class SecondaryPane extends React.Component {
         this.setState({ body: b })
     }
 
+    closeWindow() {
+        var window = remote.BrowserWindow.getFocusedWindow();
+        window.close();
+    }
+
+    minimizeWindow() {
+        var window = remote.BrowserWindow.getFocusedWindow();
+        window.minimize();
+    }
+
+    maximizeWindow() {
+        var window = remote.BrowserWindow.getFocusedWindow();
+        window.isMaximized() ? window.unmaximize() : window.maximize();
+    }
 
     render() {
         return (
             <div className="pane secondary-pane">
                 <div id="resizer-left" className="resizer resizer-left" onMouseDown={this.props.resizeHandler}></div>
-                <div className="pane-header">
+                <div className="pane-header secondary-pane-header">
+                    <div class="title-bar-spacer"></div>
+                    <img className="title-bar-icon title-bar-icon--normal" onClick={this.minimizeWindow} src={minimise} />
+                    <img className="title-bar-icon title-bar-icon--normal" onClick={this.maximizeWindow} src={maximise} />
+                    <img className="title-bar-icon title-bar-icon--close" onClick={this.closeWindow} src={close} />
                 </div>
                 <Tabs tabs={[
                     {
@@ -102,7 +126,7 @@ class Body extends React.Component {
                         headerItem.push(<div className="props-key">{item[0]}</div>);
                         headerItem.push(<div className="props-value">{item[1]}</div>);
                     }
-                    
+
                     headers.push(<div className="prop-row">{headerItem}</div>)
                 }
             return (headers);

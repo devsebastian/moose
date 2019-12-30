@@ -28,3 +28,21 @@
     width: 50%;
     color: var(--text-primary);
 }
+
+.title-bar-spacer {
+    flex: 1;
+}
+
+.title-bar-icon {
+    -webkit-app-region: no-drag;
+    height: 35px;
+    padding: var(--padding-medium) 20px;
+}
+
+.title-bar-icon--normal:hover {
+    background-color: var(--primary-dark);
+}
+
+.title-bar-icon--close:hover {
+    background-color: rgba(255, 0, 0, 0.836);
+}

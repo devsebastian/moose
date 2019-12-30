@@ -13,16 +13,22 @@ class MainPane extends React.Component {
         super()
         this.state = {
             url: "",
-            activeTab: ""
+            activeTab: "",
+            activeMethod: ""
         }
 
         this.setUrl = this.setUrl.bind(this)
         this.load = this.load.bind(this)
         this.setActiveTab = this.setActiveTab.bind(this)
+        this.setActiveMethod = this.setActiveMethod.bind(this)
     }
 
     setActiveTab(tab) {
         this.setState({ activeTab: tab })
+    }
+
+    setActiveMethod(method) {
+        this.setState({ activeMethod: method })
     }
 
     setUrl(event) {
@@ -31,7 +37,7 @@ class MainPane extends React.Component {
 
     load() {
         axios({
-            method: "GET",
+            method: this.state.activeMethod,
             url: this.state.url,
         }).then(response => {
             this.setState({
@@ -49,16 +55,17 @@ class MainPane extends React.Component {
                 <div className="pane-header main-pane-header">
                     {/* <button className="flat-btn multi-options" id="method-btn">GET</button> */}
                     <SelectButton
-                        setActiveMethod={() => { }}
+                        setActiveMethod={this.setActiveMethod}
                         left={12}
+                        colors={this.props.colors}
                         values={[
-                            { id: "GET", title: "GET", color: "#000" },
-                            { id: "POST", title: "POST", color: "#000" },
-                            { id: "PUT", title: "PUT", color: "#000" },
-                            { id: "PATCH", title: "PATCH", color: "#000" },
-                            { id: "DELETE", title: "DELETE", color: "#000" },
-                            { id: "OPTIONS", title: "OPTIONS", color: "#000" },
-                            { id: "HEAD", title: "HEAD", color: "#000" },
+                            { id: "GET", title: "GET", color: this.props.colors["GET"] },
+                            { id: "POST", title: "POST", color: this.props.colors["POST"] },
+                            { id: "PUT", title: "PUT", color: this.props.colors["PUT"] },
+                            { id: "PATCH", title: "PATCH", color: this.props.colors["PATCH"] },
+                            { id: "DELETE", title: "DELETE", color: this.props.colors["DELETE"] },
+                            { id: "OPTIONS", title: "OPTIONS", color: this.props.colors["OPTIONS"] },
+                            { id: "HEAD", title: "HEAD", color: this.props.colors["HEAD"] },
                         ]}
                     />
                     <input className="url-bar" placeholder="http://your-product/posts/1" value={this.state.url} onChange={this.setUrl} />

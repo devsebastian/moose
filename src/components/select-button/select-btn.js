@@ -38,10 +38,10 @@ class SelectButton extends React.Component {
     }
 
     render() {
-        const { values } = this.props
+        const { values, colors, left } = this.props
         return (
             <div className="select-btn-container">
-                <div class="select-btn" onClick={this.openDialog}>
+                <div class="select-btn" onClick={this.openDialog} style={{ color: this.props.colors[this.state.activeMethod] }}>
                     {this.state.activeMethod}
                 </div>
                 {(this.state.openDialog) ?
@@ -50,7 +50,7 @@ class SelectButton extends React.Component {
                             right: this.props.right,
                             left: this.props.left
                         }}>
-                        {values.map(token => <div onClick={this.setActiveMethod} className="select-btn-option" key={token.id}>{token.title}</div>)}
+                        {values.map(token => <div onClick={this.setActiveMethod} style={{ color: token.color }} className="select-btn-option" key={token.id}>{token.title}</div>)}
                     </div> : <div></div>
                 }
             </div>
