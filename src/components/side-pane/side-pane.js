@@ -7,27 +7,17 @@ class SidePane extends React.Component {
 
     constructor() {
         super()
-        this.state = {
-            requests: []
-        }
-
         this.addRequest = this.addRequest.bind(this);
     }
-    componentDidMount() {
-        this.setState({
-            requests: this.props.requests
-        })
-    }
 
 
-    addRequest() {
+    addRequest(title, method) {
         this.setState((oldState) => ({
             requests: [...oldState.requests, {
-                title: "Dev API",
-                method: "POST"
+                title: title,
+                method: method
             }]
-        })
-        )
+        }))
     }
 
     render() {
@@ -47,9 +37,9 @@ class SidePane extends React.Component {
                     <div className="search-container">
                         <input className="search-bar" />
                     </div>
-                    {this.state.requests.map((request, pos) => <SidePaneTab onClick={this.props.setTab} selected={this.props.selectedPos == pos ? "true" : "false"} key={pos} color={this.props.colors[request.method]} title={request.title} method={request.method} />)}
+                    {this.props.requests.map((request, pos) => <SidePaneTab onClick={this.props.setTab} selected={this.props.selectedPos == pos ? "true" : "false"} key={pos} color={this.props.colors[request.method]} title={request.title} method={request.method} />)}
                 </div>
-                <div className="floating-action-btn" onClick={this.addRequest}>+</div>
+                <div className="floating-action-btn" onClick={this.props.showNewRequestDialog}>+</div>
             </div>
         )
     }

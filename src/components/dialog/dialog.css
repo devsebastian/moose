@@ -1,0 +1,61 @@
+.dialog-container {
+    position: fixed;
+    width: 100%;
+    padding: 32px;
+    background: rgba(0, 0, 0, 0.575);
+    height: 100%;
+    z-index: 1000;
+}
+
+.dialog-header {
+    padding: var(--padding-medium);
+    border-bottom: 1px solid var(--divider);
+}
+
+.dialog-body {
+    flex: 1;
+    padding: var(--padding-medium);
+    border-bottom: 1px solid var(--divider);
+}
+
+.dialog {
+    background: var(--primary);
+    height: 300px;
+    max-width: 900px;
+    margin: auto;
+    left: 0;
+    position: relative;
+    right: 0;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-pane {
+    display: flex;
+}
+
+.dialog-input {
+    background-color: var(--primary-dark);
+    border: 0;
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    padding: var(--padding-medium);
+}
+
+.dialog-footer {
+    padding: var(--padding-medium);
+    align-self: flex-end;
+    flex-direction: row;
+    display: flex;
+}
+
+.dialog-button {
+    font-weight:700;
+    cursor: pointer;
+    display: block;
+    margin-left: var(--padding-medium);
+}

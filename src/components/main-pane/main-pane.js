@@ -3,8 +3,9 @@ import './main-pane.css'
 // import axios from 'axios'
 import Editor from '../editor/editor';
 import Tabs from '../tabs/tabs';
+import SelectButton from '../select-button/select-btn';
 
-const axios =  window.require('axios')
+const axios = window.require('axios')
 
 class MainPane extends React.Component {
 
@@ -46,7 +47,20 @@ class MainPane extends React.Component {
         return (
             <div className="pane main-pane" >
                 <div className="pane-header main-pane-header">
-                    <button className="flat-btn multi-options" id="method-btn">GET</button>
+                    {/* <button className="flat-btn multi-options" id="method-btn">GET</button> */}
+                    <SelectButton
+                        setActiveMethod={() => { }}
+                        left={12}
+                        values={[
+                            { id: "GET", title: "GET", color: "#000" },
+                            { id: "POST", title: "POST", color: "#000" },
+                            { id: "PUT", title: "PUT", color: "#000" },
+                            { id: "PATCH", title: "PATCH", color: "#000" },
+                            { id: "DELETE", title: "DELETE", color: "#000" },
+                            { id: "OPTIONS", title: "OPTIONS", color: "#000" },
+                            { id: "HEAD", title: "HEAD", color: "#000" },
+                        ]}
+                    />
                     <input className="url-bar" placeholder="http://your-product/posts/1" value={this.state.url} onChange={this.setUrl} />
                     <button className="flat-btn" onClick={this.load}>SEND</button>
                 </div>

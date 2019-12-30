@@ -1,13 +1,34 @@
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+:root {
+  --primary-light: #2e2f2b;
+  --primary: #282925;
+  --primary-dark: #2e2f2b;
+  --side-tab-highlight: #363734;
+  --accent: #5db704;
+  --divider: #444540;
+  /* --divider: #3d434e; */
+  --tag: #75cf01;
+  --value: #ecd623;
+  --number: #bf94e5;
+  --extra: #dadada;
+  --text-primary: #dadada;
+  --text-secondary: #ffffff;
+  --text-tertiary: #717172;
+  --prop-key-color: #61afef;
+  --padding-medium: 12px;
+  --padding-small: 6px;
+  --header-size: 60px;
+  --text-primary-size: 0.8em;
+  --text-secondary-size: ;
+}
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body, #root{
+html, body, #root {
   height: 100%;
   width: 100%;
 }
@@ -23,7 +44,7 @@ code {
   font-family: "Open Sans", monospace;
 }
 
-:root{
+:root {
   --scrollbar-thumb: #4a4f5a;
   --scrollbar-track: #2f343e;
 }
@@ -46,6 +67,14 @@ code {
   left: -3px;
 }
 
-input{
+input {
+  color: var(--text-primary);
+}
+
+.dialog {
+  background-color: var(--primary);
+  display: block;
+  position: relative;
+  height: 100%;
   color: var(--text-primary);
 }

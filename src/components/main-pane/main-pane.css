@@ -3,18 +3,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-}
-
-#method-btn::after {
-    content: "▼";
-    font-size: 0.6em;
-    margin-left: 4px;
-}
-
-#dialog-method-btn::after {
-    content: "▼";
-    font-size: 0.6em;
-    margin-left: 4px;
+    min-width: 60px;
 }
 
 .url-bar {

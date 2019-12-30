@@ -1,0 +1,43 @@
+.select-btn-container{
+    display: inline-block;
+    height: 100%;
+    padding: var(--padding-medium);
+    text-align: center;
+    font-size: var(--text-primary-size);
+    padding: var(--padding-medium);
+    -webkit-user-select: none;
+    z-index: 500;
+}
+
+.select-btn {
+    padding-top: var(--padding-medium);
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.select-btn::after{
+    content: "⯆";
+    margin-left: 5px;
+}
+
+.select-btn-context-menu {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    background-color: var(--primary);
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.356);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: var(--padding-medium);
+}
+
+.select-btn-option {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid var(--divider);
+    cursor: pointer;
+}
+
+.select-btn-option:hover {
+    background-color: var(--primary-light);
+}
