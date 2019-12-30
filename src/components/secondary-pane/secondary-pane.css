@@ -17,12 +17,14 @@
 .props-key {
     display: inline-block;
     font-size: 1.1em;
+    word-wrap: break-word;
     width: 50%;
     color: var(--text-tertiary);
 }
 
 .props-value {
     display: inline-block;
+    word-wrap: break-word;
     width: 50%;
     color: var(--text-primary);
 }

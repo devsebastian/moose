@@ -14,17 +14,15 @@ Moose is a powerful cross-platform REST *client*, built on top of Electron. It i
 # Pluggins/Dependencies
  - [axios](https://www.npmjs.com/package/axios) - for accessing API contents and headers
  - [code-mirror](https://codemirror.net/) - default editor used in the app
- - [electron-is-dev](https://www.npmjs.com/package/electron-is-dev) - to check whether electron is in development mode or not
  - React Scripts required to work in react
    - [react](https://reactjs.org/)
    - [react-dom](https://reactjs.org/)
    - [react-scripts](https://reactjs.org/)
    
 # DevDependencies
- - [concurrently](https://www.npmjs.com/package/concurrently)
+ - [foreman](https://www.npmjs.com/package/foreman)
  - [electron](https://electronjs.org/)
  - [electron-builder](https://www.npmjs.com/package/electron-builder)
- - [wait-on](https://www.npmjs.com/package/wait-on)
  
 # License
 MIT © Dev Sebastian
