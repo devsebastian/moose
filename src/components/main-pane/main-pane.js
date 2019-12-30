@@ -1,8 +1,10 @@
 import React from 'react';
 import './main-pane.css'
-import axios from 'axios'
+// import axios from 'axios'
 import Editor from '../editor/editor';
 import Tabs from '../tabs/tabs';
+
+const axios =  window.require('axios')
 
 class MainPane extends React.Component {
 

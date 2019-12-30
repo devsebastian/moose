@@ -3,6 +3,8 @@ import './secondary-pane.css'
 import Tabs from '../tabs/tabs';
 import Editor from '../editor/editor'
 
+const { dialog } = window.require('electron').remote
+
 class SecondaryPane extends React.Component {
 
     constructor() {
@@ -73,14 +75,37 @@ class Body extends React.Component {
         if (title === "Header") {
             var headers = []
             for (var key in response.headers) {
-                headers.push(<div className="prop-row">
-                    <div className="props-key">{key}</div>
-                    <div className="props-value">{response.headers[key]}</div>
-                </div>)
+                if (Array.isArray(response.headers[key])) {
+                    for (var val of response.headers[key]) {
+                        headers.push(<div className="prop-row">
+                            <div className="props-key">{key}</div>
+                            <div className="props-value">{val}</div>
+                        </div>)
+                    }
+
+                } else {
+                    headers.push(<div className="prop-row">
+                        <div className="props-key">{key}</div>
+                        <div className="props-value">{response.headers[key]}</div>
+                    </div>)
+                }
             }
             return (headers);
         } else if (title === "Cookie") {
-            return <div>Dev</div>
+            var headers = []
+            if (response.headers != undefined && Array.isArray(response.headers["set-cookie"]))
+                for (var val of response.headers["set-cookie"]) {
+                    var vals = val.split(';')
+                    var headerItem = []
+                    for (var v of vals) {
+                        var item = v.split('=')
+                        headerItem.push(<div className="props-key">{item[0]}</div>);
+                        headerItem.push(<div className="props-value">{item[1]}</div>);
+                    }
+                    
+                    headers.push(<div className="prop-row">{headerItem}</div>)
+                }
+            return (headers);
         } else {
             return (<div></div>)
 
