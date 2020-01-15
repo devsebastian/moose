@@ -1,6 +1,5 @@
 import React from 'react';
 import './main-pane.css'
-// import axios from 'axios'
 import Editor from '../editor/editor';
 import Tabs from '../tabs/tabs';
 import SelectButton from '../select-button/select-btn';
@@ -44,7 +43,6 @@ class MainPane extends React.Component {
                 json: JSON.stringify(response.data, null, "\t")
             })
             this.props.setResponse(response)
-            console.log(response)
         });
 
     }

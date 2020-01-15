@@ -49,20 +49,19 @@ class App extends React.Component {
     super();
     this.state = {
       selectedTabIndex: 0,
-      response: "",
       showNewRequestDialog: false,
       requests: [{
-        "title": "News API",
-        "method": "POST",
-        "url": "google.com",
+        title: "News API",
+        method: "POST",
+        url: "google.com",
       }, {
-        "title": "Mongoose",
-        "method": "GET",
-        "url": "google.com",
+        title: "Mongoose",
+        method: "GET",
+        url: "google.com",
       }, {
-        "title": "Moose API",
-        "method": "PATCH",
-        "url": "google.com",
+        title: "Moose API",
+        method: "PATCH",
+        url: "google.com",
       }]
 
     }
@@ -73,6 +72,11 @@ class App extends React.Component {
 
     this.showNewRequestDialog = this.showNewRequestDialog.bind(this)
     this.closeNewRequestDialog = this.closeNewRequestDialog.bind(this)
+    this.setSelectedTabIndex = this.setSelectedTabIndex.bind(this)
+  }
+
+  setSelectedTabIndex(index){
+    this.setState({selectedTabIndex: index})
   }
 
   setMethod(m) {
@@ -80,9 +84,19 @@ class App extends React.Component {
   }
 
   setResponse(res) {
-    this.setState({ response: res })
-  }
+    console.log("setresponse called")
 
+    this.setState(oldState => {
+      var requests = oldState.requests
+      console.log("dev" + requests[oldState.selectedTabIndex])
+
+      requests[oldState.selectedTabIndex].response = res
+      return { requests: requests }
+    })
+
+    console.log("setresponse end")
+
+  }
 
   addNewRequest(title, method) {
     console.log("new request call recieved")
@@ -92,6 +106,7 @@ class App extends React.Component {
         method: method
       }]
     }))
+
   }
 
   showNewRequestDialog() {
@@ -114,6 +129,7 @@ class App extends React.Component {
             showNewRequestDialog={this.showNewRequestDialog}
             resizeHandler={resize}
             colors={this.colors}
+            setSelectedTabIndex={this.setSelectedTabIndex}
             selectedPos={this.state.selectedTabIndex}
             requests={this.state.requests} />
           <MainPane
@@ -121,11 +137,15 @@ class App extends React.Component {
             setResponse={this.setResponse}
             data={this.state} />
           <SecondaryPane
-            response={this.state.response}
+            response={this.state.requests[this.state.selectedTabIndex].response}
             resizeHandler={resize} />
         </div>
         <StatusBar />
-        {this.state.showNewRequestDialog ? <CreateNewRequestDialog colors={this.colors} addNewRequest={this.addNewRequest} closeDialog={this.closeNewRequestDialog} /> : <div></div>}
+        {this.state.showNewRequestDialog ?
+          <CreateNewRequestDialog colors={this.colors}
+            addNewRequest={this.addNewRequest}
+            closeDialog={this.closeNewRequestDialog} />
+          : <div></div>}
       </div>
     );
   }

@@ -51,6 +51,11 @@ class SecondaryPane extends React.Component {
             <div className="pane secondary-pane">
                 <div id="resizer-left" className="resizer resizer-left" onMouseDown={this.props.resizeHandler}></div>
                 <div className="pane-header secondary-pane-header">
+                    {this.props.response === undefined || this.props.response.status === undefined ?
+                        <div></div> :
+                        <div className="secondary-pane-button">
+                            {this.props.response.status + " " + this.props.response.statusText}
+                        </div>}
                     <div class="title-bar-spacer"></div>
                     <img className="title-bar-icon title-bar-icon--normal" onClick={this.minimizeWindow} src={minimise} />
                     <img className="title-bar-icon title-bar-icon--normal" onClick={this.maximizeWindow} src={maximise} />
@@ -71,15 +76,16 @@ class SecondaryPane extends React.Component {
                     },
                     {
                         title: "Timeline",
-                        id: "Timeline"
+                        id: "Timeline",
+                        disabled: true
                     }
                 ]}
 
                     setActiveTab={this.setActiveTab}
                 />
-                <div className="pane-body">
+                {this.props.response === undefined ? <div></div> : <div className="pane-body">
                     <Body title={this.state.activeTab} response={this.props.response} />
-                </div>
+                </div>}
             </div>
         )
     }

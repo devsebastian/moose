@@ -46,3 +46,12 @@
 .title-bar-icon--close:hover {
     background-color: rgba(255, 0, 0, 0.836);
 }
+
+.secondary-pane-button{
+    background: var(--accent);
+    padding:var(--padding-small) var(--padding-medium) ;
+    height: 35px;
+    border-radius: 4px;
+    margin: auto 12px;
+    overflow: hidden;
+}

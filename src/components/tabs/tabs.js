@@ -32,6 +32,7 @@ class Tabs extends React.Component {
                         title={tab.title}
                         id={tab.id}
                         selected={this.state.activeTab == tab.id ? true : false}
+                        disabled={tab.disabled}
                         setActiveTab={this.setActiveTab} />)}
                 <div className="tab-spacer"></div>
             </div >

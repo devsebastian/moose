@@ -1,15 +1,14 @@
 const { app, BrowserWindow } = require('electron');
-
 const path = require('path');
 const url = require('url');
 
-let mainWindow, newRequestWindow;
+let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        frame: false,
         width: 1024,
         height: 600,
+        frame: false,
         webPreferences: {
             nodeIntegration: true
         }

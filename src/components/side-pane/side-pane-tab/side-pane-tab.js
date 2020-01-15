@@ -5,7 +5,7 @@ function SidePaneTab(props) {
 
     var tabClass = props.selected == "true" ? "side-pane-tab side-pane-tab--selected" : "side-pane-tab";
     return (
-        <div className={tabClass}>
+        <div className={tabClass} onClick={() => props.onClick(props.pos)}>
             <div className="side-pane-tab-title">
                 {props.title}
             </div>

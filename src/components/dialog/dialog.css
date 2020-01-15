@@ -4,10 +4,12 @@
     padding: 32px;
     background: rgba(0, 0, 0, 0.575);
     height: 100%;
+    -webkit-app-region: no-drag;
     z-index: 1000;
 }
 
 .dialog-header {
+    -webkit-user-select: none;
     padding: var(--padding-medium);
     border-bottom: 1px solid var(--divider);
 }
@@ -51,6 +53,7 @@
     align-self: flex-end;
     flex-direction: row;
     display: flex;
+    -webkit-user-select: none;
 }
 
 .dialog-button {
