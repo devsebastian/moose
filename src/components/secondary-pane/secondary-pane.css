@@ -3,6 +3,7 @@
     border-left: 1px solid var(--divider);
     background: var(--primary);
     -webkit-user-select: none;
+    min-width: 250px;
 }
 
 .prop-row {
@@ -36,6 +37,7 @@
 .title-bar-icon {
     -webkit-app-region: no-drag;
     height: 35px;
+    -webkit-user-select: none;
     padding: var(--padding-medium) 20px;
 }
 
@@ -49,8 +51,8 @@
 
 .secondary-pane-button{
     background: var(--accent);
-    padding:var(--padding-small) var(--padding-medium) ;
-    height: 35px;
+    padding: 2px 6px;
+    height: 28px;
     border-radius: 4px;
     margin: auto 12px;
     overflow: hidden;

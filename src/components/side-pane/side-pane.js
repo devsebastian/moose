@@ -35,7 +35,7 @@ class SidePane extends React.Component {
                 </div>
                 <div className="pane-body">
                     <div className="search-container">
-                        <input className="search-bar" />
+                        <input className="search-bar" placeholder="Search"/>
                     </div>
                     {this.props.requests.map((request, pos) =>
                         <SidePaneTab

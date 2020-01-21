@@ -43,7 +43,7 @@ class MainPane extends React.Component {
                 json: JSON.stringify(response.data, null, "\t")
             })
             this.props.setResponse(response)
-        });
+        })
 
     }
 

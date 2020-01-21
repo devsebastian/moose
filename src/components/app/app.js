@@ -51,17 +51,8 @@ class App extends React.Component {
       selectedTabIndex: 0,
       showNewRequestDialog: false,
       requests: [{
-        title: "News API",
-        method: "POST",
-        url: "google.com",
-      }, {
-        title: "Mongoose",
-        method: "GET",
-        url: "google.com",
-      }, {
-        title: "Moose API",
-        method: "PATCH",
-        url: "google.com",
+        title: "My Request",
+        method: "GET"
       }]
 
     }
@@ -75,8 +66,8 @@ class App extends React.Component {
     this.setSelectedTabIndex = this.setSelectedTabIndex.bind(this)
   }
 
-  setSelectedTabIndex(index){
-    this.setState({selectedTabIndex: index})
+  setSelectedTabIndex(index) {
+    this.setState({ selectedTabIndex: index })
   }
 
   setMethod(m) {
@@ -88,7 +79,7 @@ class App extends React.Component {
 
     this.setState(oldState => {
       var requests = oldState.requests
-      console.log("dev" + requests[oldState.selectedTabIndex])
+      console.log(requests[oldState.selectedTabIndex])
 
       requests[oldState.selectedTabIndex].response = res
       return { requests: requests }
