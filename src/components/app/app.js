@@ -75,18 +75,11 @@ class App extends React.Component {
   }
 
   setResponse(res) {
-    console.log("setresponse called")
-
     this.setState(oldState => {
       var requests = oldState.requests
-      console.log(requests[oldState.selectedTabIndex])
-
       requests[oldState.selectedTabIndex].response = res
       return { requests: requests }
     })
-
-    console.log("setresponse end")
-
   }
 
   addNewRequest(title, method) {
@@ -126,6 +119,7 @@ class App extends React.Component {
           <MainPane
             colors={this.colors}
             setResponse={this.setResponse}
+            response={this.state.requests[this.state.selectedTabIndex].response}
             data={this.state} />
           <SecondaryPane
             response={this.state.requests[this.state.selectedTabIndex].response}

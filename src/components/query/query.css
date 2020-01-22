@@ -1,0 +1,33 @@
+.query-body p{
+    font-size: 12px;
+}
+
+.query-body{
+    padding: 12px;
+}
+
+.url-preview-box{
+    background: var(--primary-dark);
+    border-radius: 4px;
+    padding: 8px;
+    margin: 12px 0px;
+    border: 1px solid var(--divider);
+    font-size: 12px;
+    overflow: auto;
+}
+
+.new-query-box input{
+    flex: 1;
+    border: 0px;
+    border-bottom: 1px solid var(--divider);
+    background: var(--primary);
+    margin: 5px;
+    padding: 6px;
+}
+
+.new-query-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

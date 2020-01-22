@@ -3,6 +3,7 @@ import './main-pane.css'
 import Editor from '../editor/editor';
 import Tabs from '../tabs/tabs';
 import SelectButton from '../select-button/select-btn';
+import Query from '../query/query';
 
 const axios = window.require('axios')
 
@@ -13,13 +14,19 @@ class MainPane extends React.Component {
         this.state = {
             url: "",
             activeTab: "",
-            activeMethod: ""
+            activeMethod: "",
+            query: "",
         }
 
         this.setUrl = this.setUrl.bind(this)
         this.load = this.load.bind(this)
         this.setActiveTab = this.setActiveTab.bind(this)
         this.setActiveMethod = this.setActiveMethod.bind(this)
+        this.setQuery = this.setQuery.bind(this)
+    }
+
+    setQuery(q) {
+        this.setState({ query: q })
     }
 
     setActiveTab(tab) {
@@ -43,6 +50,7 @@ class MainPane extends React.Component {
                 json: JSON.stringify(response.data, null, "\t")
             })
             this.props.setResponse(response)
+            console.log(response);
         })
 
     }
@@ -85,12 +93,32 @@ class MainPane extends React.Component {
                     },
                 ]}
                     setActiveTab={this.setActiveTab} />
-                <div className="pane-body">
-                    <Editor id="main-pane-editor" />
-                </div>
+                {/* <div className="pane-body"> */}
+                <Body title={this.state.activeTab} response={this.props.response} />
+                {/* </div> */}
             </div >
         )
     }
 }
+
+
+
+class Body extends React.Component {
+
+    constructor() {
+        super()
+    }
+
+    render() {
+        const { response, title } = this.props
+        var url = ""
+        if (response != undefined && response.config != undefined) {
+            url = response.config.url;
+        }
+        if (title === "Query") return <Query url={url} />
+        else return <div></div>
+    }
+}
+
 
 export default MainPane;
