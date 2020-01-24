@@ -116,6 +116,7 @@ class Body extends React.Component {
             url = response.config.url;
         }
         if (title === "Query") return <Query url={url} />
+        else if (title === "JSON") return (<Editor id="main-pane-editor" value="dev" />)
         else return <div></div>
     }
 }

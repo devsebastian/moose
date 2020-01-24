@@ -3,7 +3,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-width: 60px;
     min-width: 30%;
 }
 

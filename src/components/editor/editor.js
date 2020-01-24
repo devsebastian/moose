@@ -34,7 +34,8 @@ class Editor extends React.Component {
     }
 
     componentWillUnmount() {
-        this.cm.toTextArea();
+        if (this.cm != undefined)
+            this.cm.toTextArea();
     }
 
 }
