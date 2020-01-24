@@ -3,7 +3,8 @@ import './main-pane.css'
 import Editor from '../editor/editor';
 import Tabs from '../tabs/tabs';
 import SelectButton from '../select-button/select-btn';
-import Query from '../query/query';
+import QueryPage from '../query-page/query-page';
+import HeaderPage from '../header-page/header-page';
 
 const axios = window.require('axios')
 
@@ -115,7 +116,8 @@ class Body extends React.Component {
         if (response != undefined && response.config != undefined) {
             url = response.config.url;
         }
-        if (title === "Query") return <Query url={url} />
+        if (title === "Query") return <QueryPage url={url} namePlaceHolder="New Name" valuePlaceHolder="New Value" />
+        else if (title === "Header") return (<HeaderPage url={url} value="dev" namePlaceHolder="New Header" valuePlaceHolder="New Value" />)
         else if (title === "JSON") return (<Editor id="main-pane-editor" value="dev" />)
         else return <div></div>
     }
