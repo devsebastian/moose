@@ -47,6 +47,10 @@
     transition: all 0.2s ease;
 }
 
-.floating-action-btn:hover{
+.floating-action-btn:hover {
     opacity: 0.9;
+}
+
+.settings-btn{
+    vertical-align: middle;
 }

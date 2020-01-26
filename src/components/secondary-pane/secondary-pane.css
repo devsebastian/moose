@@ -1,5 +1,5 @@
 .secondary-pane {
-    width: 45%;
+    width: 35%;
     border-left: 1px solid var(--divider);
     background: var(--primary);
     -webkit-user-select: none;

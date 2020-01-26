@@ -3,7 +3,8 @@ import './tabs.css'
 import Tab from '../tab/tab';
 
 
-class Tabs extends React.Component {
+class 
+Tabs extends React.Component {
 
     constructor() {
         super()

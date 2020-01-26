@@ -55,3 +55,7 @@
 *:focus {
   outline: 0;
 }
+
+.icon-btn {
+  cursor: pointer;
+}

@@ -78,3 +78,6 @@ input {
   height: 100%;
   color: var(--text-primary);
 }
+*:focus {
+  outline: 0;
+}

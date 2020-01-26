@@ -24,10 +24,16 @@ class MainPane extends React.Component {
         this.setActiveTab = this.setActiveTab.bind(this)
         this.setActiveMethod = this.setActiveMethod.bind(this)
         this.setQuery = this.setQuery.bind(this)
+        this.setData = this.setData.bind(this)
     }
 
     setQuery(q) {
         this.setState({ query: q })
+    }
+
+    setData(data){
+        this.setState({data: data})
+        this.props.setData(data)
     }
 
     setActiveTab(tab) {
@@ -36,6 +42,7 @@ class MainPane extends React.Component {
 
     setActiveMethod(method) {
         this.setState({ activeMethod: method })
+        this.props.setRequestMethod(method);
     }
 
     setUrl(event) {
@@ -45,13 +52,14 @@ class MainPane extends React.Component {
     load() {
         axios({
             method: this.state.activeMethod,
+            data: this.state.data,
             url: this.state.url,
         }).then(response => {
             this.setState({
                 json: JSON.stringify(response.data, null, "\t")
             })
             this.props.setResponse(response)
-            console.log(response);
+            console.log(response)
         })
 
     }
@@ -95,7 +103,7 @@ class MainPane extends React.Component {
                 ]}
                     setActiveTab={this.setActiveTab} />
                 {/* <div className="pane-body"> */}
-                <Body title={this.state.activeTab} response={this.props.response} />
+                <Body title={this.state.activeTab} response={this.props.response} setData={this.setData} />
                 {/* </div> */}
             </div >
         )
@@ -117,8 +125,11 @@ class Body extends React.Component {
             url = response.config.url;
         }
         if (title === "Query") return <QueryPage url={url} namePlaceHolder="New Name" valuePlaceHolder="New Value" />
-        else if (title === "Header") return (<HeaderPage url={url} value="dev" namePlaceHolder="New Header" valuePlaceHolder="New Value" />)
-        else if (title === "JSON") return (<Editor id="main-pane-editor" value="dev" />)
+        else if (title === "Header") return (<HeaderPage url={url} namePlaceHolder="New Header" valuePlaceHolder="New Value" />)
+        else if (title === "JSON") return (
+            <div>
+                <Editor id="main-pane-editor" value="" onChange={(e) => this.props.setData(e.target.value)} />
+            </div>)
         else return <div></div>
     }
 }

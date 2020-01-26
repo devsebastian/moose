@@ -52,32 +52,46 @@ class App extends React.Component {
       showNewRequestDialog: false,
       requests: [{
         title: "My Request",
-        method: "GET"
+        method: "GET",
       }]
 
     }
 
-    this.setMethod = this.setMethod.bind(this)
     this.setResponse = this.setResponse.bind(this)
+    this.setData = this.setData.bind(this)
     this.addNewRequest = this.addNewRequest.bind(this)
 
     this.showNewRequestDialog = this.showNewRequestDialog.bind(this)
     this.closeNewRequestDialog = this.closeNewRequestDialog.bind(this)
     this.setSelectedTabIndex = this.setSelectedTabIndex.bind(this)
+    this.setRequestMethod = this.setRequestMethod.bind(this)
   }
 
   setSelectedTabIndex(index) {
     this.setState({ selectedTabIndex: index })
   }
 
-  setMethod(m) {
-    this.setState({ method: m });
-  }
-
   setResponse(res) {
     this.setState(oldState => {
       var requests = oldState.requests
-      requests[oldState.selectedTabIndex].response = res
+      requests[oldState.selectedTabIndex].method = res
+      return { requests: requests }
+    })
+  }
+
+  
+  setRequestMethod(m) {
+    this.setState(oldState => {
+      var requests = oldState.requests
+      requests[oldState.selectedTabIndex].method = m
+      return { requests: requests }
+    })
+  }
+
+  setData(res) {
+    this.setState(oldState => {
+      var requests = oldState.requests
+      requests[oldState.selectedTabIndex].data = res
       return { requests: requests }
     })
   }
@@ -119,6 +133,8 @@ class App extends React.Component {
           <MainPane
             colors={this.colors}
             setResponse={this.setResponse}
+            setRequestMethod={this.setRequestMethod}
+            setData={this.setData}
             response={this.state.requests[this.state.selectedTabIndex].response}
             data={this.state} />
           <SecondaryPane
