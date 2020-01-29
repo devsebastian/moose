@@ -7,7 +7,7 @@
 
 > Moose is still in its very early stages. Breaking changes might come and the app might crash or not work as intended in some cases.
 
-Beta Setup: [windows (\*.exe setup)](https://drive.google.com/file/d/13tHqI6CLSyhpwNoSkyuBcreciORtDoBK/view)
+Beta Setup: [windows (\*.exe setup)](https://drive.google.com/open?id=1qJ3HzkEhlP4eP7ZkFKEWMktRrG-wNT7d)
 
 Moose is a powerful cross-platform REST *client*, built on top of Electron. It is still in development and is in it's very early stages.
 
