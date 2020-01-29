@@ -53,4 +53,6 @@
 
 .settings-btn{
     vertical-align: middle;
+    cursor: pointer;
+    height: 100%;
 }

@@ -48,6 +48,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      stylePath: 'default.css',
       selectedTabIndex: 0,
       showNewRequestDialog: false,
       requests: [{
@@ -71,15 +72,17 @@ class App extends React.Component {
     this.setState({ selectedTabIndex: index })
   }
 
+  // -------------------- request changes -----------------------------------
+
   setResponse(res) {
     this.setState(oldState => {
       var requests = oldState.requests
-      requests[oldState.selectedTabIndex].method = res
+      requests[oldState.selectedTabIndex].response = res
       return { requests: requests }
     })
   }
 
-  
+
   setRequestMethod(m) {
     this.setState(oldState => {
       var requests = oldState.requests
@@ -107,22 +110,22 @@ class App extends React.Component {
 
   }
 
+  // ----------------------------------------------------------------------------------
+
+
   showNewRequestDialog() {
     this.setState({ showNewRequestDialog: true })
   }
 
   closeNewRequestDialog() {
-    this.setState({
-      showNewRequestDialog: false
-    })
+    this.setState({ showNewRequestDialog: false })
   }
-
 
   render() {
     return (
       <div className="main">
         <div className="pane-container">
-
+          <link rel="stylesheet" type="text/css" href={this.state.stylePath} />
           <SidePane
             showNewRequestDialog={this.showNewRequestDialog}
             resizeHandler={resize}
@@ -130,6 +133,7 @@ class App extends React.Component {
             setSelectedTabIndex={this.setSelectedTabIndex}
             selectedPos={this.state.selectedTabIndex}
             requests={this.state.requests} />
+
           <MainPane
             colors={this.colors}
             setResponse={this.setResponse}
@@ -137,9 +141,11 @@ class App extends React.Component {
             setData={this.setData}
             response={this.state.requests[this.state.selectedTabIndex].response}
             data={this.state} />
+
           <SecondaryPane
             response={this.state.requests[this.state.selectedTabIndex].response}
             resizeHandler={resize} />
+
         </div>
         <StatusBar />
         {this.state.showNewRequestDialog ?

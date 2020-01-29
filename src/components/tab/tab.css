@@ -3,6 +3,7 @@
     padding: var(--padding-medium);
     border-bottom: 1px solid var(--divider);
     font-size: 0.8em;
+    cursor: pointer;
     -webkit-user-select: none;
 }
 
@@ -18,4 +19,10 @@
 .tab--disabled{
     pointer-events: none;
     color: var(--text-tertiary);
+}
+
+
+.tab-spacer{
+    flex: 1;
+    border-bottom: 1px solid var(--divider);
 }

@@ -1,0 +1,22 @@
+:root {
+    --primary-light: #2e2f2b;
+    --primary: #282925;
+    --primary-dark: #2e2f2b;
+    --side-tab-highlight: #363734;
+    --accent: #5db704;
+    --divider: #444540;
+    /* --divider: #3d434e; */
+    --tag: #75cf01;
+    --value: #ecd623;
+    --number: #bf94e5;
+    --extra: #dadada;
+    --text-primary: #dadada;
+    --text-secondary: #ffffff;
+    --text-tertiary: #717172;
+    --prop-key-color: #61afef;
+    --padding-medium: 12px;
+    --padding-small: 6px;
+    --header-size: 60px;
+    --text-primary-size: 0.8em;
+    --text-secondary-size: ;
+  }

@@ -83,7 +83,11 @@ class MainPane extends React.Component {
                             { id: "HEAD", title: "HEAD", color: this.props.colors["HEAD"] },
                         ]}
                     />
-                    <input className="url-bar" placeholder="http://your-product/posts/1" value={this.state.url} onChange={this.setUrl} />
+                    <input className="url-bar" placeholder="http://your-product/posts/1" value={this.state.url} onChange={this.setUrl} onKeyPress={(e) => {
+                        if(e.keyCode = 13){
+                            this.load()
+                        }
+                    }} />
                     <button className="flat-btn" onClick={this.load}>SEND</button>
                 </div>
                 <Tabs tabs={[
