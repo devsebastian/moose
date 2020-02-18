@@ -1,8 +1,8 @@
 # Moose | API
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/devsebastian/sort-visualiser/issues) 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/devsebastian/moose/issues) 
 [![beta](https://img.shields.io/badge/production-BETA-red.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/devsebastian/sort-visualiser/blob/master/LICENSE) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/devsebastian/moose/blob/master/LICENSE) 
 [![twitter](https://img.shields.io/badge/Twitter-@iDevSebastian-green.svg)](https://twitter.com/iDevSebastian)
 
 > Moose is still in its very early stages. Breaking changes might come and the app might crash or not work as intended in some cases.
@@ -54,4 +54,4 @@ npm run dev
 ```
 
 ## License
-MIT © Dev Sebastian
+MIT © Dev Sebastian 2020
