@@ -54,4 +54,6 @@ npm run dev
 ```
 
 ## License
-Copyright (c) 2020 Dev Sebastian
+Copyright (c) 2020 Dev Sebastian.
+
+Licensed under the MIT license.
