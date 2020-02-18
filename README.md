@@ -54,4 +54,4 @@ npm run dev
 ```
 
 ## License
-MIT © Dev Sebastian 2020
+Copyright (c) 2020 Dev Sebastian
