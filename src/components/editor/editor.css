@@ -1,3 +1,9 @@
 .CodeMirror{
     flex: 1;
 }
+
+.cm-tab::before{
+    position: absolute;
+    content: ". . ";
+    opacity: 0.2;
+}
