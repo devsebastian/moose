@@ -1,13 +1,13 @@
 # Moose | API
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/devsebastian/sort-visualiser/issues) 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/devsebastian/moose/issues) 
 [![beta](https://img.shields.io/badge/production-BETA-red.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/devsebastian/sort-visualiser/blob/master/LICENSE) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/devsebastian/moose/blob/master/LICENSE) 
 [![twitter](https://img.shields.io/badge/Twitter-@iDevSebastian-green.svg)](https://twitter.com/iDevSebastian)
 
 > Moose is still in its very early stages. Breaking changes might come and the app might crash or not work as intended in some cases.
 
-Beta Setup: [windows (\*.exe setup)](https://drive.google.com/file/d/13tHqI6CLSyhpwNoSkyuBcreciORtDoBK/view)
+Beta Setup: [windows (\*.exe setup)](https://drive.google.com/open?id=1qJ3HzkEhlP4eP7ZkFKEWMktRrG-wNT7d)
 
 Moose is a powerful cross-platform REST *client*, built on top of Electron. It is still in development and is in it's very early stages.
 
@@ -54,4 +54,6 @@ npm run dev
 ```
 
 ## License
-MIT © Dev Sebastian
+Copyright (c) 2020 Dev Sebastian.
+
+Licensed under the MIT license.
