@@ -14,11 +14,13 @@ class Editor extends React.Component {
                 smartIndent: true,
                 indentWithTabs: true,
                 indentUnit: 4,
-                mode: {name: "javascript", json: true},
+                mode: { name: "javascript", json: true },
                 theme: "default",
                 lineNumbers: true
             }}
             onChange={(editor, data, value) => {
+                if (this.props.onChange !== undefined && typeof this.props.onChange === 'function')
+                    this.props.onChange(data);
             }}
         />
     }
