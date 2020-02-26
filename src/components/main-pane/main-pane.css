@@ -6,6 +6,11 @@
     min-width: 30%;
 }
 
+.main-pane__body{
+    overflow-y: auto;
+    flex: 1;
+}
+
 .url-bar {
     border: 0;
     background: transparent;

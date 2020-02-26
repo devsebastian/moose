@@ -31,8 +31,8 @@ class MainPane extends React.Component {
         this.setState({ query: q })
     }
 
-    setData(data){
-        this.setState({data: data})
+    setData(data) {
+        this.setState({ data: data })
         this.props.setData(data)
     }
 
@@ -84,7 +84,7 @@ class MainPane extends React.Component {
                         ]}
                     />
                     <input className="url-bar" placeholder="http://your-product/posts/1" value={this.state.url} onChange={this.setUrl} onKeyPress={(e) => {
-                        if(e.keyCode = 13){
+                        if (e.keyCode = 13) {
                             this.load()
                         }
                     }} />
@@ -118,23 +118,19 @@ class MainPane extends React.Component {
 
 class Body extends React.Component {
 
-    constructor() {
-        super()
-    }
-
     render() {
+        
         const { response, title } = this.props
         var url = ""
-        if (response != undefined && response.config != undefined) {
+
+        if (response !== undefined && response.config !== undefined) {
             url = response.config.url;
         }
-        if (title === "Query") return <QueryPage url={url} namePlaceHolder="New Name" valuePlaceHolder="New Value" />
-        else if (title === "Header") return (<HeaderPage url={url} namePlaceHolder="New Header" valuePlaceHolder="New Value" />)
-        else if (title === "JSON") return (
-            <div>
-                <Editor id="main-pane-editor" value="" onChange={(e) => this.props.setData(e.target.value)} />
-            </div>)
-        else return <div></div>
+        return (<div className="main-pane__body">
+            {title === "Query" && <QueryPage url={url} namePlaceHolder="New Name" valuePlaceHolder="New Value" /> }
+            {title === "Header" && <HeaderPage url={url} namePlaceHolder="New Header" valuePlaceHolder="New Value" /> }
+            {title === "JSON" && <Editor id="main-pane-editor" value="" onChange={this.props.setData} />}
+        </div>)
     }
 }
 
