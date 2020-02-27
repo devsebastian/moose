@@ -1,6 +1,7 @@
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/javascript/javascript'
+import 'codemirror/addon/edit/closebrackets'
 import './default.css'
 import React from 'react'
 import './editor.css'
@@ -16,7 +17,8 @@ class Editor extends React.Component {
                 indentUnit: 4,
                 mode: { name: "javascript", json: true },
                 theme: "default",
-                lineNumbers: true
+                lineNumbers: true,
+                autoCloseBrackets: true
             }}
             onChange={(editor, data, value) => {
                 if (this.props.onChange !== undefined && typeof this.props.onChange === 'function')
